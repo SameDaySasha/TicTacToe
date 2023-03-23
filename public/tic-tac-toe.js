@@ -23,10 +23,11 @@ imageY.src = "https://assets.aaonline.io/Module-DOM-API/formative-project-tic-ta
 
 function newGame() {
     for(let i = 0; i < 9; i++) {
-        let currdiv = `square-${i}`
-        console.log(currdiv)
-        let currentID = document.getElementById(currdiv)
-        // currentID.setAttribute("hasSymbol","false")
+
+        
+        let currentID = document.getElementById(`square-${i}`)
+        console.log(`current Id: ${currentID}`)
+        currentID.setAttribute("hasSymbol",false)
 
 
         eListener(currentID)
@@ -43,13 +44,13 @@ function eListener(id){
             //toggle x to o
             currPturn = 'o'
             //change id hasSymbol to true
-            id.setAttribute("hasSymbol", "true")
+            id.setAttribute("hasSymbol", true)
         }
         else if(currPturn === 'o' && !id.hasSymbol){
             id.appendChild(imageY)
 
             currPturn = 'x'
-            id.setAttribute("hasSymbol", "true")
+            id.setAttribute("hasSymbol", true)
         }
         else{
             //display an error that the move is invalid
