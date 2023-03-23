@@ -23,17 +23,21 @@ imageY.src = "https://assets.aaonline.io/Module-DOM-API/formative-project-tic-ta
 
 function newGame() {
     for(let i = 0; i < 9; i++) {
-
-        
         let currentID = document.getElementById(`square-${i}`)
-        console.log(`current Id: ${currentID}`)
+        console.log(`current Id: ${i}`)
         currentID.setAttribute("hasSymbol",false)
 
 
         eListener(currentID)
     }
 }
-newGame();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    newGame();
+    console.log(`IT IS NOW  ${currPturn} TURN`)
+  });
+  
 function eListener(id){
     id.addEventListener('click', ()=>{
         if(currPturn === 'x' && !id.hasSymbol){
@@ -45,15 +49,17 @@ function eListener(id){
             currPturn = 'o'
             //change id hasSymbol to true
             id.setAttribute("hasSymbol", true)
+            console.log(`IT IS NOW  ${currPturn} TURN`)
         }
         else if(currPturn === 'o' && !id.hasSymbol){
             id.appendChild(imageY)
 
             currPturn = 'x'
             id.setAttribute("hasSymbol", true)
+            console.log(`IT IS NOW  ${currPturn} TURN`)
         }
-        else{
-            //display an error that the move is invalid
+        else if (id.hasSymbol){
+            id.removeEventListener('click', eListener)
             console.error("Invalid Move")
         }
 
