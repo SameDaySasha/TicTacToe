@@ -1,1 +1,47 @@
 /* Your code here */
+
+.gameBoard{
+
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px;
+}
+#square-0{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#square-1{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#square-2{
+
+    border-bottom: 2px solid black;
+}
+#square-3{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#square-4{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#square-5{
+    border-bottom: 2px solid black;
+}
+#square-6{
+    border-right: 2px solid black;
+
+}
+#square-7{
+    border-right: 2px solid black;
+
+}
+
+.title{
+    height: 50px;
+}
+
+.buttonMenu {
+  margin-top: 20px;
+}
